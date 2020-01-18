@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'/>
+  </head>
+
+  <body>
+    <script>
+      function computerPlay() {
+        let randomNumber = Math.floor(Math.random() * 10) % 3
+        let possibilities = ['Rock', 'Paper ', 'Scissors']
+        return possibilities[randomNumber]
+      }
+
+      function oneRound(pS, cS) {
+        pS = pS.toLowerCase()
+        if (pS == 'rock' && cS == 'Paper') {
+          return 'You Lose! Paper beats Rock'
+        } else if (pS == 'rock' && cS == 'Scissors') {
+          return 'You Win! Rock beats Scissors'
+        } else if (pS == 'paper' && cS == 'Rock') {
+          return 'You Win! Paper beats Rock'
+        } else if (pS == 'paper' && cS == 'Scissors') {
+          return 'You Lose! Scissors beats Paper'
+        } else if (pS == 'scissors' && cS == 'Paper') {
+          return 'You Win! Scissors beats Paper'
+        } else if (pS == 'scissors' && cS == 'Rock') {
+          return 'You Lose! Rock beats Scissors'
+        } else {
+          return 'Tie!'
+        }
+      }
+
+      function game() {
+        let i = 0
+        while (i < 5) {
+          let userChoice = prompt('YOU MUST CHOOSE...')
+          let compChoice = computerPlay()
+          alert(oneRound(userChoice, compChoice))
+          i++
+        }
+
+
+      }
+
+      game()
+    </script>
+  </body>
+</html>
+
